@@ -1,6 +1,6 @@
 import express from "express";
 import cors from "cors";
-// import mainRouter from "./src/routes/mainRouter.js";
+import mainRouter from "./routes/mainRouter.js";
 
 const app = express();
 
@@ -15,8 +15,6 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use("/", (req,res)=>{
-    res.send("Hola si");
-});
+app.use("/", mainRouter);
 
 export default app;
