@@ -56,5 +56,8 @@ subject.belongsToMany(student, {
 });
 
 
+student_subject.belongsTo(student, { foreignKey: "id_student" });
+student_subject.belongsTo(subject, { foreignKey: "id_subject" });
+
 
 

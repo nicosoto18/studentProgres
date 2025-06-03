@@ -4,6 +4,7 @@ import teacherRouter from "./teachers/teachersRouter.js";
 import subjectRouter from "./subjects/subjectRouter.js";
 import gradeRouter from "./grades/gradeRouter.js"
 import studentSubjectRouter from "./studentSubjects/studentSubjectsRouter.js";
+import analyticsControllerRouter from "./analyticsControllers/analyticsControllerRouter.js";
 
 
 const mainRouter = express.Router();
@@ -13,6 +14,8 @@ mainRouter
     .use("/teachers", teacherRouter)
     .use("/subjects", subjectRouter)
     .use("/grades", gradeRouter)
-    .use("/studentSubject", studentSubjectRouter )
+    .use("/studentSubject", studentSubjectRouter)
+    .use("/analyticsController", analyticsControllerRouter)
+
 
 export default mainRouter;
