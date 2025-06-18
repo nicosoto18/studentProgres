@@ -9,7 +9,7 @@ export const getProgresStudent = async(id_student, id_subject) => {
                 id_subject: id_subject 
             },
             order: [['date_grade', 'ASC']],
-            attributes: ['date_grade', 'total_points', 'points_obtained']
+            attributes: ['date_grade', 'total_points', 'points_obtained', "type"]
         });
 
         let totalPoints = 0;
@@ -24,7 +24,10 @@ export const getProgresStudent = async(id_student, id_subject) => {
 
             progres.push({
                 date: grade.date_grade,
-                performance: parseFloat(performance.toFixed(2))
+                performance: parseFloat(performance.toFixed(2)),
+                totalPoints: grade.total_points,
+                obtainedPoints: grade.points_obtained,
+                title: grade.type
             });
         }
 

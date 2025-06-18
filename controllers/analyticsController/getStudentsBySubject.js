@@ -30,17 +30,19 @@ export const getStudentsBySubject = async (id_subject) => {
         obtainedPoints += grade.points_obtained;
       }
 
-      const average = totalPoints > 0 ? (obtainedPoints / totalPoints) * 10 : 0;
+      const average = totalPoints > 0 ? (obtainedPoints / totalPoints) * 100 : 0;
 
       result.push({
         id_student,
         id_subject,
         student: {
           name: entry.student.name,
-          lastname: entry.student.lastname,
+          lastname: entry.student.lastname
         },
         average: parseFloat(average.toFixed(2)),
-        atRisk: average < 6,
+        atRisk: average < 60 && totalPoints > 0,
+        totalPoints: totalPoints,
+        obtainedPoints: obtainedPoints,
       });
     }
 

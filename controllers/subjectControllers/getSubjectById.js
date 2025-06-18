@@ -1,4 +1,4 @@
-import { subject } from "../../database/db.js";
+import { subject, teacher } from "../../database/db.js";
 
 export const getSubjectById = async(id) =>{
     try {
